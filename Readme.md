@@ -19,6 +19,61 @@ AI_Scheduler_Complete/
 └── README.md                # This file
 
 ```
+FLow diagram:
+1. CLIENT REQUEST
+   ├── run.ipynb / run.ipynb
+   ├── Loads: sample_request.json
+   └── POST → http://localhost:5000/receive
+
+2. FLASK SERVER ENTRY
+   ├── submission_complete.py
+   ├── Route: /receive
+   └── Calls: your_meeting_assistant(data)
+
+3. MAIN ORCHESTRATOR
+   ├── meeting_assistant.py
+   ├── Function: your_meeting_assistant()
+   └── Coordinates entire flow
+
+4. AI PARSING PHASE
+   ├── ai_agent.py
+   ├── Function: parse_meeting_request()
+   ├── Calls: meta llama model (port 3000)
+   └── Extracts: participants, duration, time_constraint
+
+5. WEEKEND VALIDATION
+   ├── calendar_utils.py
+   ├── Function: get_date_range_from_constraint()
+   └── Check: If weekend → Raise exception
+
+6. CALENDAR RETRIEVAL
+   ├── calendar_utils.py
+   ├── Function: retrieve_calendar_events()
+   ├── Loops: For each participant
+   └── Gets: Existing calendar events
+
+7. CONFLICT ANALYSIS
+   ├── conflict_resolver.py
+   ├── Function: resolve_conflicts()
+   ├── Analyzes: All participants' availability
+   └── Applies: Test case logic
+
+8. DECISION ENGINE
+   ├── conflict_resolver.py
+   ├── Functions: Various test case handlers
+   ├── Logic: Importance-based scheduling
+   └── Returns: Optimal meeting time
+
+9. RESPONSE FORMATTING
+   ├── output_formatter.py
+   ├── Function: format_output()
+   ├── Template: Output_Event.json format
+   └── Creates: Final JSON response
+
+10. RESPONSE DELIVERY
+    ├── submission_complete.py
+    ├── Returns: JSON to client
+    └── Client displays result
 
 ## 🚀 Quick Start
 
