@@ -1,6 +1,5 @@
-# AI Meeting Assistant - Complete Implementation
-
-This directory contains the complete implementation of the AI-powered meeting scheduling assistant that resolves conflicts intelligently.
+# AMD-Scheduling_Assistant
+Hackathon Organized at IISC Bangalore By AMD
 
 ## 🏗️ Architecture
 
