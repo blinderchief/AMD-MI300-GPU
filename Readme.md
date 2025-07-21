@@ -74,7 +74,7 @@ FLow diagram:
     ├── Returns: JSON to client
     └── Client displays result
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### 1. Start the AI Server
 First, make sure your vLLM server is running (meta-llama model on port 3000):
@@ -111,7 +111,7 @@ The server will start on `http://localhost:5000` with endpoints:
 for running the Program use run.ipynb and upload the input file from Json_Samples folder
 ```
 
-## 🧠 AI-Powered Features
+## Meta LLama Model-Powered Features
 
 ### 1. **Intelligent Email Parsing**
 - Extracts participants, duration, time constraints, and subject
@@ -139,16 +139,16 @@ for running the Program use run.ipynb and upload the input file from Json_Sample
 - **Clear messaging**: "Its weekends no meetings are possible"
 - **Business hours enforcement**: Meetings only scheduled Monday-Friday
 
-## 📊 Test Cases Coverage
+##  Test Cases Coverage
 
 | Test Case | Scenario | AI Decision | Expected Outcome |
 |-----------|----------|-------------|------------------|
-| **Case 1** | All participants free | Schedule all | ✅ Direct scheduling |
-| **Case 2** | Urgent + one busy | Partial schedule | ✅ Organizer first, follow-up |
-| **Case 3** | All busy (important) | Reschedule tomorrow | ✅ Next day scheduling |
-| **Case 4** | Feedback + one busy | Schedule available | ✅ Proceed with subset |
-| **Case 5** | Saturday meeting | Reject weekend | ✅ "Its weekends no meetings are possible" |
-| **Case 6** | Sunday meeting | Reject weekend | ✅ "Its weekends no meetings are possible" |
+| **Case 1** | All participants free | Schedule all |  Direct scheduling |
+| **Case 2** | Urgent + one busy | Partial schedule |  Organizer first, follow-up |
+| **Case 3** | All busy (important) | Reschedule tomorrow |  Next day scheduling |
+| **Case 4** | Feedback + one busy | Schedule available | Proceed with subset |
+| **Case 5** | Saturday meeting | Reject weekend | "Its weekends no meetings are possible" |
+| **Case 6** | Sunday meeting | Reject weekend | "Its weekends no meetings are possible" |
 
 ## 🔧 Configuration
 
@@ -172,8 +172,6 @@ for running the Program use run.ipynb and upload the input file from Json_Sample
 3. **All Busy**: Reschedule to next available day
 4. **Priority Override**: High-priority meetings can reschedule low-priority ones
 5. **Weekend Protection**: Automatically reject Saturday/Sunday requests
-
-## 📝 API Usage
 
 ### Request Format
 ```json
@@ -207,7 +205,7 @@ for running the Program use run.ipynb and upload the input file from Json_Sample
 }
 ```
 
-## 🔍 Debugging
+##  Debugging
 
 ### Server Logs
 The server provides detailed logging:
@@ -227,7 +225,7 @@ curl http://localhost:5000/debug
 2. **Calendar Access Failed**: Assumes participant is available
 3. **Parsing Errors**: Uses default values (30 min duration, flexible timing)
 
-## 🎯 Key Algorithms
+##  Key Algorithms
 
 ### Conflict Resolution Logic
 ```python
